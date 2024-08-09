@@ -1,0 +1,37 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: HOTEL-SERVICE
+  datasource:
+    url: jdbc:postgresql://localhost:5432/microservice
+    username: postgres
+    password: admin123
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultzone: http://localhost:8761/eureka
+
+info:
+  app:
+    name: Hotel Serivce
+  java:
+    version: 22
+  type: SpringBoot
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,beans,env
